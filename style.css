@@ -605,12 +605,17 @@ nav .profile .profile-link a:hover {
 	#content nav .nav-link {
 		display: none;
 	}
+
+	#content {
+		position: relative;
+		width: calc(100% - 60px);
+		transition: all .3s ease;
+	}
+	nav .nav-link,
+	nav .divider {
+		display: none;
+	}
 }
-
-
-
-
-
 
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
@@ -654,17 +659,5 @@ nav .profile .profile-link a:hover {
 	}
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	#content {
-		position: relative;
-		width: calc(100% - 60px);
-		transition: all .3s ease;
-	}
-	nav .nav-link,
-	nav .divider {
-		display: none;
 	}
 }
