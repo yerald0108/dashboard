@@ -35,17 +35,16 @@ imgProfile.addEventListener('click', function () {
 	
 	boton.addEventListener('click', (e) => {
 		e.stopPropagation();
-		menu.classList.toggle('show');
-	});
-	
-	document.addEventListener('click',
-		(e) => {
-			if(!dropdownProfile.contains(e.target)) {
-				dropdownProfile.classList.remove('show');
+
+		document.addEventListener('click',
+			(e) => {
+				if(!dropdownProfile.contains(e.target)) {
+					dropdownProfile.classList.remove('show');
+				}
 			}
-		}
-	)
-})
+		)
+	});
+});
 
 const searchButton = document.querySelector('#content nav form .form-input button');
 const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
