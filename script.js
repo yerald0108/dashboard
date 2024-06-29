@@ -12,8 +12,6 @@ allSideMenu.forEach(item=> {
 });
 
 
-
-
 // TOGGLE SIDEBAR
 const menuBar = document.querySelector('#content nav .bx.bx-menu');
 const sidebar = document.getElementById('sidebar');
@@ -23,10 +21,14 @@ menuBar.addEventListener('click', function () {
 })
 
 
+//PROFILE
+const profile = document.querySelector('nav .profile');
+const imgProfile = profile.querySelector('img');
+const dropdownProfile = profile.querySelector('.profile-link');
 
-
-
-
+imgProfile.addEventListener('click', function () {
+	dropdownProfile.classList.toggle('show');
+})
 
 const searchButton = document.querySelector('#content nav form .form-input button');
 const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
@@ -44,10 +46,6 @@ searchButton.addEventListener('click', function (e) {
 	}
 })
 
-
-
-
-
 if(window.innerWidth < 768) {
 	sidebar.classList.add('hide');
 } else if(window.innerWidth > 576) {
@@ -55,15 +53,12 @@ if(window.innerWidth < 768) {
 	searchForm.classList.remove('show');
 }
 
-
 window.addEventListener('resize', function () {
 	if(this.innerWidth > 576) {
 		searchButtonIcon.classList.replace('bx-x', 'bx-search');
 		searchForm.classList.remove('show');
 	}
 })
-
-
 
 const switchMode = document.getElementById('switch-mode');
 
