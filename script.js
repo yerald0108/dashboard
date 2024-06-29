@@ -60,12 +60,25 @@ window.addEventListener('resize', function () {
 	}
 })
 
-const switchMode = document.getElementById('switch-mode');
+const btnSwitch = document.querySelector('#switch');
 
-switchMode.addEventListener('change', function () {
-	if(this.checked) {
-		document.body.classList.add('dark');
+btnSwitch.addEventListener('click', () => {
+	document.body.classList.toggle('dark');
+	btnSwitch.classList.toggle('active');
+
+	//LocalStorage
+	if(document.body.classList.contains('dark')){
+		localStorage.setItem('dark-mode', 'true');
 	} else {
-		document.body.classList.remove('dark');
+		localStorage.setItem('dark-mode', 'false');
 	}
-})
+});
+
+//Modo actual
+if(localStorage.getItem('dark-mode') === 'true'){
+	document.body.classList.add('dark');
+	btnSwitch.classList.add('active');
+} else {
+	document.body.classList.remove('dark');
+	btnSwitch.classList.remove('active');
+}

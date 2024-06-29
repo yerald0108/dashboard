@@ -44,11 +44,8 @@ body.dark {
 body {
 	background: var(--grey);
 	overflow-x: hidden;
+	transition: .3s ease all;
 }
-
-
-
-
 
 /* SIDEBAR */
 #sidebar {
@@ -316,6 +313,47 @@ nav .profile .profile-link a:hover {
 	background: var(--grey);
 }
 
+.switch {
+	background: #343D58;
+	border-radius: 1000px;
+	border: none;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	outline: none;
+	&::after{
+		content: "";
+		display: block;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		background: #F1F1F1;
+		top: 0;
+		left: 0;
+		right: unset;
+		border-radius: 100px;
+		transition: .3s ease all;
+		box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+	}
+	&.active {
+		background: orange;
+		color: #000;
+		&::after {
+			right: 0;
+			left: unset;
+		}
+	}
+	span {
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		display: block;
+		background: none;
+		color: #fff;
+	}
+}
+
+/*
 #content nav .switch-mode {
 	display: block;
 	min-width: 50px;
@@ -339,6 +377,7 @@ nav .profile .profile-link a:hover {
 #content nav #switch-mode:checked + .switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
 }
+*/
 /* NAVBAR */
 
 
@@ -441,10 +480,6 @@ nav .profile .profile-link a:hover {
 #content main .box-info li .text p {
 	color: var(--dark);	
 }
-
-
-
-
 
 #content main .table-data {
 	display: flex;
@@ -556,14 +591,6 @@ nav .profile .profile-link a:hover {
 }
 /* MAIN */
 /* CONTENT */
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 768px) {
 	#sidebar {
