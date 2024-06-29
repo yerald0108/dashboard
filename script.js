@@ -21,13 +21,27 @@ menuBar.addEventListener('click', function () {
 })
 
 
+
 //PROFILE
 const profile = document.querySelector('nav .profile');
 const imgProfile = profile.querySelector('img');
 const dropdownProfile = profile.querySelector('.profile-link');
+const boton = document.querySelector('.profile');
+const menu =document.querySelector('.profile-link');
+
 
 imgProfile.addEventListener('click', function () {
 	dropdownProfile.classList.toggle('show');
+	
+	boton.addEventListener('click', (e) => {
+		e.stopPropagation();
+		menu.classList.toggle('show');
+	});
+	
+	window.onclick = function (e) {
+		menu.classList.remove('show')
+	}
+	
 })
 
 const searchButton = document.querySelector('#content nav form .form-input button');
@@ -43,7 +57,7 @@ searchButton.addEventListener('click', function (e) {
 		} else {
 			searchButtonIcon.classList.replace('bx-x', 'bx-search');
 		}
-	}
+	}S
 })
 
 if(window.innerWidth < 768) {
